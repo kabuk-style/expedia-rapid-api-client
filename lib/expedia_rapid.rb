@@ -15,6 +15,7 @@ require 'expedia_rapid/api_client'
 require 'expedia_rapid/api_error'
 require 'expedia_rapid/version'
 require 'expedia_rapid/configuration'
+require 'expedia_rapid/auth_token'
 
 # Models
 require 'expedia_rapid/models/address'
