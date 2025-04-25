@@ -23,7 +23,7 @@ describe ExpediaRapid::SupplierTransparency do
   describe 'test an instance of SupplierTransparency' do
     it 'should create an instance of SupplierTransparency' do
       # uncomment below to test the instance creation
-      #expect(instance).to be_instance_of(ExpediaRapid::SupplierTransparency)
+      # expect(instance).to be_instance_of(ExpediaRapid::SupplierTransparency)
     end
   end
 

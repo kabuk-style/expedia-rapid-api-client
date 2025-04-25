@@ -23,7 +23,7 @@ describe ExpediaRapid::StatisticReference do
   describe 'test an instance of StatisticReference' do
     it 'should create an instance of StatisticReference' do
       # uncomment below to test the instance creation
-      #expect(instance).to be_instance_of(ExpediaRapid::StatisticReference)
+      # expect(instance).to be_instance_of(ExpediaRapid::StatisticReference)
     end
   end
 

@@ -387,6 +387,5 @@ module ExpediaRapid
         end
       end
     end
-
   end
 end

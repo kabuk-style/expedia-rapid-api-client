@@ -23,7 +23,7 @@ describe ExpediaRapid::ImageReference do
   describe 'test an instance of ImageReference' do
     it 'should create an instance of ImageReference' do
       # uncomment below to test the instance creation
-      #expect(instance).to be_instance_of(ExpediaRapid::ImageReference)
+      # expect(instance).to be_instance_of(ExpediaRapid::ImageReference)
     end
   end
 

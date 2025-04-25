@@ -250,7 +250,5 @@ module ExpediaRapid
         value
       end
     end
-
   end
-
 end

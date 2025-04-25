@@ -23,7 +23,7 @@ describe ExpediaRapid::GetAmenitiesReference200ResponseValue do
   describe 'test an instance of GetAmenitiesReference200ResponseValue' do
     it 'should create an instance of GetAmenitiesReference200ResponseValue' do
       # uncomment below to test the instance creation
-      #expect(instance).to be_instance_of(ExpediaRapid::GetAmenitiesReference200ResponseValue)
+      # expect(instance).to be_instance_of(ExpediaRapid::GetAmenitiesReference200ResponseValue)
     end
   end
 

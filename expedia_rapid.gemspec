@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.description = "EPS Rapid V3"
   s.license     = "Unlicense"
   s.required_ruby_version = ">= 2.7"
-  s.metadata    = {}
+  s.metadata = {}
 
   s.add_runtime_dependency 'faraday', '>= 1.0.1', '< 3.0'
   s.add_runtime_dependency 'faraday-multipart'

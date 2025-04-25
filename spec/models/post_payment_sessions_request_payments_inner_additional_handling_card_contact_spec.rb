@@ -23,7 +23,7 @@ describe ExpediaRapid::PostPaymentSessionsRequestPaymentsInnerAdditionalHandling
   describe 'test an instance of PostPaymentSessionsRequestPaymentsInnerAdditionalHandlingCardContact' do
     it 'should create an instance of PostPaymentSessionsRequestPaymentsInnerAdditionalHandlingCardContact' do
       # uncomment below to test the instance creation
-      #expect(instance).to be_instance_of(ExpediaRapid::PostPaymentSessionsRequestPaymentsInnerAdditionalHandlingCardContact)
+      # expect(instance).to be_instance_of(ExpediaRapid::PostPaymentSessionsRequestPaymentsInnerAdditionalHandlingCardContact)
     end
   end
 

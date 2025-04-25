@@ -23,7 +23,7 @@ describe ExpediaRapid::AmenityReference do
   describe 'test an instance of AmenityReference' do
     it 'should create an instance of AmenityReference' do
       # uncomment below to test the instance creation
-      #expect(instance).to be_instance_of(ExpediaRapid::AmenityReference)
+      # expect(instance).to be_instance_of(ExpediaRapid::AmenityReference)
     end
   end
 
