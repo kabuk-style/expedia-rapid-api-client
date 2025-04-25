@@ -11,5 +11,5 @@ Generator version: 7.10.0
 =end
 
 module ExpediaRapid
-  VERSION = '1.0.0'
+  VERSION = '1.0.2'
 end
