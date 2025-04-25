@@ -1,6 +1,6 @@
 # expedia_rapid
 
-ExpediaRapid - the Ruby gem for the Rapid
+ExpediaRapid - the Ruby gem for the Expedia Rapid API
 
 EPS Rapid V3
 
@@ -60,11 +60,14 @@ require 'expedia_rapid'
 # Setup authorization
 ExpediaRapid.configure do |config|
   # Configure API key authorization: rapidAuth
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  config.api_key['Authorization'] = ExpediaRapid.AuthToken('YOUR API KEY', 'YOUR API Secret')
+  config.api_key_prefix['Authorization'] = ExpediaRapid::AuthTokenPrefix
+  config.server_index = Rails.env.production? ? 1 : 0
   # Configure faraday connection
-  config.configure_faraday_connection { |connection| 'YOUR CONNECTION CONFIG PROC' }
+  config.configure_faraday_connection do |connection|
+    connection.options.params_encoder = Faraday::FlatParamsEncoder
+    'YOUR CONNECTION CONFIG PROC'
+  end
 end
 
 api_instance = ExpediaRapid::BookingsApi.new
