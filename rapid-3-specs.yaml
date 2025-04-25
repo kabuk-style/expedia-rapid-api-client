@@ -5252,7 +5252,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Property'
+                  $ref: '#/components/schemas/PropertyAvailability'
               examples:
                 Availability:
                   value:
