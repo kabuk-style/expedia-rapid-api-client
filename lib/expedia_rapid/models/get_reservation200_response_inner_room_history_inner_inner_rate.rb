@@ -49,9 +49,9 @@ module ExpediaRapid
       {
         :'id' => :'String',
         :'promotions' => :'GetReservation200ResponseInnerRoomsInnerRatePromotions',
-        :'cancel_penalties' => :'Array<GetAvailability200ResponseInnerRoomsInnerRatesInnerCancelPenaltiesInner>',
+        :'cancel_penalties' => :'Array<GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerCancelPenaltiesInner>',
         :'deposits' => :'Array<GetReservation200ResponseInnerRoomsInnerRateDepositsInner>',
-        :'pricing' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValue'
+        :'pricing' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValue'
       }
     end
 

@@ -16,7 +16,7 @@ require 'time'
 module ExpediaRapid
   # An object representing one incentive source and the stay dates relevant to that particular incentive.
   class GetAvailability200ResponseInnerRoomsInnerRatesInnerMarketingFeeIncentivesInner
-    # The source of the incentive. This can be used to differentiate between incentives in the case that more than one incentive applies to a particular rate. 
+    # The source of the incentive. This can be used to differentiate between incentives in the case that more than one incentive applies to a particular rate.
     attr_accessor :source
 
     # The first stay date with the incentive applied in ISO 8601 format.

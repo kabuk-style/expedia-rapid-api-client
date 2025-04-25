@@ -23,9 +23,9 @@
 | **special_request** | **String** | Any special request info associated with the room. | [optional] |
 | **smoking** | **Boolean** | Indicates if the room is smoking or non-smoking. | [optional] |
 | **loyalty_id** | **String** | A loyalty identifier for a hotel loyalty program associated with this room guest. | [optional] |
-| **amount_charged** | [**GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive**](GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive.md) |  | [optional] |
-| **amount_refunded** | [**GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive**](GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive.md) |  | [optional] |
-| **penalty** | [**GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive**](GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive.md) |  | [optional] |
+| **amount_charged** | [**GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive**](GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive.md) |  | [optional] |
+| **amount_refunded** | [**GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive**](GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive.md) |  | [optional] |
+| **penalty** | [**GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive**](GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive.md) |  | [optional] |
 | **rate** | [**GetReservation200ResponseInnerRoomHistoryInnerInnerRate**](GetReservation200ResponseInnerRoomHistoryInnerInnerRate.md) |  | [optional] |
 
 ## Example

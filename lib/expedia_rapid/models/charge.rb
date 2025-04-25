@@ -36,8 +36,8 @@ module ExpediaRapid
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'billable_currency' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
-        :'request_currency' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency'
+        :'billable_currency' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
+        :'request_currency' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency'
       }
     end
 

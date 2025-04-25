@@ -14,14 +14,14 @@ require 'date'
 require 'time'
 
 module ExpediaRapid
-  # To be included if invoicing is requested. 
+  # To be included if invoicing is requested.
   class PostItineraryRequestInvoicing
     # The traveler's company name to appear on the invoice.
     attr_accessor :company_name
 
     attr_accessor :company_address
 
-    # Provide this when a specific site or branding should be used on the invoice instead of partner name. 
+    # Provide this when a specific site or branding should be used on the invoice instead of partner name.
     attr_accessor :point_of_sale_display
 
     # Email address to send invoices

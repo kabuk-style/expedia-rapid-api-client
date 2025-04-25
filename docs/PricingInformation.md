@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **nightly** | **Array&lt;Array&lt;GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueNightlyInnerInner&gt;&gt;** | Array of arrays of amount objects. Each sub-array of amount objects represents a single night&#39;s charges. | [optional] |
-| **stay** | [**Array&lt;GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueStayInner&gt;**](GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueStayInner.md) | Array of amount objects. Details any charges that apply to the entire stay (not divided per-night). Any per-room adjustments are applied to the &#x60;base_rate&#x60; amount within this object. | [optional] |
-| **totals** | [**GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotals**](GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotals.md) |  | [optional] |
-| **fees** | [**GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueFees**](GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueFees.md) |  | [optional] |
+| **nightly** | **Array&lt;Array&lt;GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueNightlyInnerInner&gt;&gt;** | Array of arrays of amount objects. Each sub-array of amount objects represents a single night&#39;s charges. | [optional] |
+| **stay** | [**Array&lt;GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueStayInner&gt;**](GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueStayInner.md) | Array of amount objects. Details any charges that apply to the entire stay (not divided per-night). Any per-room adjustments are applied to the &#x60;base_rate&#x60; amount within this object. | [optional] |
+| **totals** | [**GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotals**](GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotals.md) |  | [optional] |
+| **fees** | [**GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueFees**](GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueFees.md) |  | [optional] |
 
 ## Example
 

@@ -28,12 +28,15 @@ module ExpediaRapid
     # Indicates if the rate is fully refundable at the time of booking. Cancel penalties may still apply. Please refer to the cancel penalties section for reference.
     attr_accessor :refundable
 
+    # Indicates the current refundability of the rate. This is a more detailed version of the `refundable` field.
+    attr_accessor :current_refundability
+
     # Indicates if a \"Member Only Deal\" is available for this rate.
     attr_accessor :member_deal_available
 
     attr_accessor :sale_scenario
 
-    # * `expedia` - Payment is taken by Expedia. * `property` - Payment is taken by the property. 
+    # * `expedia` - Payment is taken by Expedia. * `property` - Payment is taken by the property.
     attr_accessor :merchant_of_record
 
     # Room amenities.
@@ -47,10 +50,10 @@ module ExpediaRapid
     # Array of `cancel_penalty` objects containing cancel penalty information.
     attr_accessor :cancel_penalties
 
-    # An array of stay date ranges within this check-in / check-out range that are not refundable. Stay dates within these ranges provide no refund on cancellation, regardless of cancel penalty windows. The stay dates are determined by the would be check-in of that night. With a check-in date of 2023-09-01, and a check-out date of 2023-09-06, this would be a 5 night stay. A `nonrefundable_date_range` with start: 2023-09-02 and end: 2023-09-03 would mean 2 of the nights are nonrefundable. The 1st night is refundable, the 2nd and 3rd nights are nonrefundable, and the 4th and 5th nights are refundable, subject to `cancel_penalties` restrictions. 
+    # An array of stay date ranges within this check-in / check-out range that are not refundable. Stay dates within these ranges provide no refund on cancellation, regardless of cancel penalty windows. The stay dates are determined by the would be check-in of that night. With a check-in date of 2023-09-01, and a check-out date of 2023-09-06, this would be a 5 night stay. A `nonrefundable_date_range` with start: 2023-09-02 and end: 2023-09-03 would mean 2 of the nights are nonrefundable. The 1st night is refundable, the 2nd and 3rd nights are nonrefundable, and the 4th and 5th nights are refundable, subject to `cancel_penalties` restrictions.
     attr_accessor :nonrefundable_date_ranges
 
-    # An array of stay date ranges within this check-in / check-out range that have an incentive applied. The stay dates are determined by the would be check-in of that night. With a check-in date of 2023-09-01, and a check-out date of 2023-09-06, this would be a 5 night stay. A `marketing_fee_incentive` with start: 2023-09-02 and end: 2023-09-03 would mean 2 of the nights have an incentive applied. The 1st night is not part of the incentive, the 2nd and 3rd nights are part of the incentive, and the 4th and 5th nights are not part of the incentive. 
+    # An array of stay date ranges within this check-in / check-out range that have an incentive applied. The stay dates are determined by the would be check-in of that night. With a check-in date of 2023-09-01, and a check-out date of 2023-09-06, this would be a 5 night stay. A `marketing_fee_incentive` with start: 2023-09-02 and end: 2023-09-03 would mean 2 of the nights have an incentive applied. The 1st night is not part of the incentive, the 2nd and 3rd nights are part of the incentive, and the 4th and 5th nights are not part of the incentive.
     attr_accessor :marketing_fee_incentives
 
     # A map of room information by occupancy.
@@ -94,6 +97,7 @@ module ExpediaRapid
         :'status' => :'status',
         :'available_rooms' => :'available_rooms',
         :'refundable' => :'refundable',
+        :'current_refundability' => :'current_refundability',
         :'member_deal_available' => :'member_deal_available',
         :'sale_scenario' => :'sale_scenario',
         :'merchant_of_record' => :'merchant_of_record',
@@ -123,20 +127,21 @@ module ExpediaRapid
         :'status' => :'String',
         :'available_rooms' => :'Float',
         :'refundable' => :'Boolean',
+        :'current_refundability' => :'String',
         :'member_deal_available' => :'Boolean',
-        :'sale_scenario' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerSaleScenario',
+        :'sale_scenario' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerSaleScenario',
         :'merchant_of_record' => :'String',
         :'amenities' => :'Hash<String, GetPropertyContent200ResponseValueAmenitiesValue>',
-        :'links' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerLinks',
-        :'bed_groups' => :'Hash<String, GetAvailability200ResponseInnerRoomsInnerRatesInnerBedGroupsValue>',
-        :'cancel_penalties' => :'Array<GetAvailability200ResponseInnerRoomsInnerRatesInnerCancelPenaltiesInner>',
-        :'nonrefundable_date_ranges' => :'Array<GetAvailability200ResponseInnerRoomsInnerRatesInnerNonrefundableDateRangesInner>',
-        :'marketing_fee_incentives' => :'Array<GetAvailability200ResponseInnerRoomsInnerRatesInnerMarketingFeeIncentivesInner>',
-        :'occupancy_pricing' => :'Hash<String, GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValue>',
-        :'promotions' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerPromotions',
-        :'card_on_file_limit' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
-        :'refundable_damage_deposit' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
-        :'deposits' => :'Array<GetAvailability200ResponseInnerRoomsInnerRatesInnerDepositsInner>'
+        :'links' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerLinks',
+        :'bed_groups' => :'Hash<String, GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerBedGroupsValue>',
+        :'cancel_penalties' => :'Array<GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerCancelPenaltiesInner>',
+        :'nonrefundable_date_ranges' => :'Array<GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerNonrefundableDateRangesInner>',
+        :'marketing_fee_incentives' => :'Array<GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerMarketingFeeIncentivesInner>',
+        :'occupancy_pricing' => :'Hash<String, GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValue>',
+        :'promotions' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerPromotions',
+        :'card_on_file_limit' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
+        :'refundable_damage_deposit' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
+        :'deposits' => :'Array<GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerDepositsInner>'
       }
     end
 
@@ -175,6 +180,10 @@ module ExpediaRapid
 
       if attributes.key?(:'refundable')
         self.refundable = attributes[:'refundable']
+      end
+
+      if attributes.key?(:'current_refundability')
+        self.current_refundability = attributes[:'current_refundability']
       end
 
       if attributes.key?(:'member_deal_available')
@@ -262,6 +271,8 @@ module ExpediaRapid
       warn '[DEPRECATED] the `valid?` method is obsolete'
       status_validator = EnumAttributeValidator.new('String', ["available", "price_changed", "sold_out"])
       return false unless status_validator.valid?(@status)
+      current_refundability_validator = EnumAttributeValidator.new('String', ["refundable", "non_refundable", "partially_refundable"])
+      return false unless current_refundability_validator.valid?(@current_refundability)
       merchant_of_record_validator = EnumAttributeValidator.new('String', ["expedia", "property"])
       return false unless merchant_of_record_validator.valid?(@merchant_of_record)
       true
@@ -275,6 +286,16 @@ module ExpediaRapid
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end
       @status = status
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] current_refundability Object to be assigned
+    def current_refundability=(current_refundability)
+      validator = EnumAttributeValidator.new('String', ["refundable", "non_refundable", "partially_refundable"])
+      unless validator.valid?(current_refundability)
+        fail ArgumentError, "invalid value for \"current_refundability\", must be one of #{validator.allowable_values}."
+      end
+      @current_refundability = current_refundability
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -296,6 +317,7 @@ module ExpediaRapid
           status == o.status &&
           available_rooms == o.available_rooms &&
           refundable == o.refundable &&
+          current_refundability == o.current_refundability &&
           member_deal_available == o.member_deal_available &&
           sale_scenario == o.sale_scenario &&
           merchant_of_record == o.merchant_of_record &&
@@ -321,7 +343,7 @@ module ExpediaRapid
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, status, available_rooms, refundable, member_deal_available, sale_scenario, merchant_of_record, amenities, links, bed_groups, cancel_penalties, nonrefundable_date_ranges, marketing_fee_incentives, occupancy_pricing, promotions, card_on_file_limit, refundable_damage_deposit, deposits].hash
+      [id, status, available_rooms, refundable, current_refundability, member_deal_available, sale_scenario, merchant_of_record, amenities, links, bed_groups, cancel_penalties, nonrefundable_date_ranges, marketing_fee_incentives, occupancy_pricing, promotions, card_on_file_limit, refundable_damage_deposit, deposits].hash
     end
 
     # Builds the object from hash

@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **value_adds** | [**Hash&lt;String, GetAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsValueAddsValue&gt;**](GetAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsValueAddsValue.md) | A collection of value adds that apply to this rate. | [optional] |
-| **deal** | [**GetAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsDeal**](GetAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsDeal.md) |  | [optional] |
+| **value_adds** | [**Hash&lt;String, GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsValueAddsValue&gt;**](GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsValueAddsValue.md) | A collection of value adds that apply to this rate. | [optional] |
+| **deal** | [**GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsDeal**](GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsDeal.md) |  | [optional] |
 
 ## Example
 

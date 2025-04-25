@@ -15,31 +15,31 @@ require 'time'
 
 module ExpediaRapid
   class ThirdPartyAuthRequest
-    # Cryptographic element used to indicate Authentication was successfully performed 
+    # Cryptographic element used to indicate Authentication was successfully performed
     attr_accessor :cavv
 
-    # Electronic Commerce Indicator. The ECI is used in payer authentication to indicate the level of security used when the cardholder provided payment information to the merchant. Its value corresponds to the authentication result and the characteristics of the merchant checkout process. Each card network, e.g., Visa, MasterCard, JCB, has specific rules around the appropriate values and use of the ECI. 
+    # Electronic Commerce Indicator. The ECI is used in payer authentication to indicate the level of security used when the cardholder provided payment information to the merchant. Its value corresponds to the authentication result and the characteristics of the merchant checkout process. Each card network, e.g., Visa, MasterCard, JCB, has specific rules around the appropriate values and use of the ECI.
     attr_accessor :eci
 
-    # Indicates what version of 3DS was used to authenticate the user. 
+    # Indicates what version of 3DS was used to authenticate the user.
     attr_accessor :three_ds_version
 
-    # Directory Server Transaction Id. Returned during authentication and is used as an additional parameter to validate that transaction was authenticated. 
+    # Directory Server Transaction Id. Returned during authentication and is used as an additional parameter to validate that transaction was authenticated.
     attr_accessor :ds_transaction_id
 
-    # set only if PAResStatus value is received in the authentication response 
+    # set only if PAResStatus value is received in the authentication response
     attr_accessor :pa_res_status
 
-    # set this only if PAResStatus value is received in the authentication response if Authentication was Frictionless → AuthenticationResponse.PAResStatus, if Authentication was a successful challenge → \"C\" (This is the directory response for challenge) 
+    # set this only if PAResStatus value is received in the authentication response if Authentication was Frictionless → AuthenticationResponse.PAResStatus, if Authentication was a successful challenge → \"C\" (This is the directory response for challenge)
     attr_accessor :ve_res_status
 
-    # String used by both Visa and MasterCard which identifies a specific transaction on the Directory This string value should remain consistent throughout a transaction's history. 
+    # String used by both Visa and MasterCard which identifies a specific transaction on the Directory This string value should remain consistent throughout a transaction's history.
     attr_accessor :xid
 
-    # Used in some scenarios for 3DS 1.0. 
+    # Used in some scenarios for 3DS 1.0.
     attr_accessor :cavv_algorithm
 
-    # Only received for Mastercard transactions, else can be null. 0 - Non-SecureCode transaction, bypassed by the Merchant 1 - Merchant-Only SecureCode transaction 2 - Fully authenticated SecureCode transaction 
+    # Only received for Mastercard transactions, else can be null. 0 - Non-SecureCode transaction, bypassed by the Merchant 1 - Merchant-Only SecureCode transaction 2 - Fully authenticated SecureCode transaction
     attr_accessor :ucaf_indicator
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -49,7 +49,7 @@ module ExpediaRapid
     # The specific unit.
     attr_accessor :listing_unit
 
-    # The name of the IPM used to build guest messaging to inform travelers of the name of the IPM who will charge their card and/or send them a confirmation email. 
+    # The name of the IPM used to build guest messaging to inform travelers of the name of the IPM who will charge their card and/or send them a confirmation email.
     attr_accessor :ipm_name
 
     # Map of the vacation rental unit configurations. The key value is the unit location.

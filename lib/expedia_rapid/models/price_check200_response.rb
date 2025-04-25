@@ -86,14 +86,14 @@ module ExpediaRapid
     def self.openapi_types
       {
         :'status' => :'String',
-        :'occupancy_pricing' => :'Hash<String, GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValue>',
+        :'occupancy_pricing' => :'Hash<String, GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValue>',
         :'links' => :'PriceCheck200ResponseLinks',
-        :'card_on_file_limit' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
-        :'refundable_damage_deposit' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
-        :'deposits' => :'Array<GetAvailability200ResponseInnerRoomsInnerRatesInnerDepositsInner>',
-        :'refund' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
-        :'amount_owed' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
-        :'penalty' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
+        :'card_on_file_limit' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
+        :'refundable_damage_deposit' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
+        :'deposits' => :'Array<GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerDepositsInner>',
+        :'refund' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
+        :'amount_owed' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
+        :'penalty' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
         :'trader_information' => :'PriceCheck200ResponseTraderInformation'
       }
     end

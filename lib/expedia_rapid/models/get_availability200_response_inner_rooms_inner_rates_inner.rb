@@ -33,7 +33,7 @@ module ExpediaRapid
 
     attr_accessor :sale_scenario
 
-    # * `expedia` - Payment is taken by Expedia. * `property` - Payment is taken by the property. 
+    # * `expedia` - Payment is taken by Expedia. * `property` - Payment is taken by the property.
     attr_accessor :merchant_of_record
 
     # Room amenities.
@@ -47,10 +47,10 @@ module ExpediaRapid
     # Array of `cancel_penalty` objects containing cancel penalty information.
     attr_accessor :cancel_penalties
 
-    # An array of stay date ranges within this check-in / check-out range that are not refundable. Stay dates within these ranges provide no refund on cancellation, regardless of cancel penalty windows. The stay dates are determined by the would be check-in of that night. With a check-in date of 2023-09-01, and a check-out date of 2023-09-06, this would be a 5 night stay. A `nonrefundable_date_range` with start: 2023-09-02 and end: 2023-09-03 would mean 2 of the nights are nonrefundable. The 1st night is refundable, the 2nd and 3rd nights are nonrefundable, and the 4th and 5th nights are refundable, subject to `cancel_penalties` restrictions. 
+    # An array of stay date ranges within this check-in / check-out range that are not refundable. Stay dates within these ranges provide no refund on cancellation, regardless of cancel penalty windows. The stay dates are determined by the would be check-in of that night. With a check-in date of 2023-09-01, and a check-out date of 2023-09-06, this would be a 5 night stay. A `nonrefundable_date_range` with start: 2023-09-02 and end: 2023-09-03 would mean 2 of the nights are nonrefundable. The 1st night is refundable, the 2nd and 3rd nights are nonrefundable, and the 4th and 5th nights are refundable, subject to `cancel_penalties` restrictions.
     attr_accessor :nonrefundable_date_ranges
 
-    # An array of stay date ranges within this check-in / check-out range that have an incentive applied. The stay dates are determined by the would be check-in of that night. With a check-in date of 2023-09-01, and a check-out date of 2023-09-06, this would be a 5 night stay. A `marketing_fee_incentive` with start: 2023-09-02 and end: 2023-09-03 would mean 2 of the nights have an incentive applied. The 1st night is not part of the incentive, the 2nd and 3rd nights are part of the incentive, and the 4th and 5th nights are not part of the incentive. 
+    # An array of stay date ranges within this check-in / check-out range that have an incentive applied. The stay dates are determined by the would be check-in of that night. With a check-in date of 2023-09-01, and a check-out date of 2023-09-06, this would be a 5 night stay. A `marketing_fee_incentive` with start: 2023-09-02 and end: 2023-09-03 would mean 2 of the nights have an incentive applied. The 1st night is not part of the incentive, the 2nd and 3rd nights are part of the incentive, and the 4th and 5th nights are not part of the incentive.
     attr_accessor :marketing_fee_incentives
 
     # A map of room information by occupancy.

@@ -158,9 +158,9 @@ module ExpediaRapid
         :'special_request' => :'String',
         :'smoking' => :'Boolean',
         :'loyalty_id' => :'String',
-        :'amount_charged' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
-        :'amount_refunded' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
-        :'penalty' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
+        :'amount_charged' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
+        :'amount_refunded' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
+        :'penalty' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
         :'rate' => :'GetReservation200ResponseInnerRoomHistoryInnerInnerRate'
       }
     end

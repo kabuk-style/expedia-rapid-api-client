@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module ExpediaRapid
-  # The fees collected by the property. The values for each type of fee are the total for that type.  Mandatory fees are collected by the property at check-in or check-out. Resort fees are charged for amenities and extras and collected by the property at check-in or check-out. Mandatory taxes are taxes collected by the property at check-in or check-out. 
+  # The fees collected by the property. The values for each type of fee are the total for that type.  Mandatory fees are collected by the property at check-in or check-out. Resort fees are charged for amenities and extras and collected by the property at check-in or check-out. Mandatory taxes are taxes collected by the property at check-in or check-out.
   class FeesPricingInformation
     attr_accessor :mandatory_fee
 
@@ -39,9 +39,9 @@ module ExpediaRapid
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'mandatory_fee' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
-        :'resort_fee' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
-        :'mandatory_tax' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive'
+        :'mandatory_fee' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
+        :'resort_fee' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive',
+        :'mandatory_tax' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusive'
       }
     end
 

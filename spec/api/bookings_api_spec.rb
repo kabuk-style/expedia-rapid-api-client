@@ -34,17 +34,17 @@ describe 'BookingsApi' do
 
   # unit tests for post_itinerary
   # Create Booking
-  # This link will be available in the Price Check response or in the register payments response when Two-Factor Authentication is used. It returns an itinerary id and links to retrieve reservation details, cancel a held booking, resume a held booking or complete payment session. Please note that depending on the state of the booking, the response will contain only the applicable link(s). 
-  # @param accept Specifies the response format that the client would like to receive back. This must be &#x60;application/json&#x60;. 
-  # @param accept_encoding Specifies the response encoding that the client would like to receive back. This must be &#x60;gzip&#x60;. 
-  # @param content_type This parameter is to specify what format the request body is in. The only supported value is application/json. 
-  # @param customer_ip IP address of the customer, as captured by your integration.&lt;br&gt; Ensure your integration passes the customer&#39;s IP, not your own. This value helps determine their location and assign the correct payment gateway.&lt;br&gt; Also used for fraud recovery and other important analytics. 
-  # @param user_agent The &#x60;User-Agent&#x60; header string from the customer&#39;s request, as captured by your integration. If you are building an application then the &#x60;User-Agent&#x60; value should be &#x60;{app name}/{app version}&#x60;. 
-  # @param token Provided as part of the link object and used to maintain state across calls. This simplifies each subsequent call by limiting the amount of information required at each step and reduces the potential for errors. Token values cannot be viewed or changed. 
-  # @param create_itinerary_request 
+  # This link will be available in the Price Check response or in the register payments response when Two-Factor Authentication is used. It returns an itinerary id and links to retrieve reservation details, cancel a held booking, resume a held booking or complete payment session. Please note that depending on the state of the booking, the response will contain only the applicable link(s).
+  # @param accept Specifies the response format that the client would like to receive back. This must be &#x60;application/json&#x60;.
+  # @param accept_encoding Specifies the response encoding that the client would like to receive back. This must be &#x60;gzip&#x60;.
+  # @param content_type This parameter is to specify what format the request body is in. The only supported value is application/json.
+  # @param customer_ip IP address of the customer, as captured by your integration.&lt;br&gt; Ensure your integration passes the customer&#39;s IP, not your own. This value helps determine their location and assign the correct payment gateway.&lt;br&gt; Also used for fraud recovery and other important analytics.
+  # @param user_agent The &#x60;User-Agent&#x60; header string from the customer&#39;s request, as captured by your integration. If you are building an application then the &#x60;User-Agent&#x60; value should be &#x60;{app name}/{app version}&#x60;.
+  # @param token Provided as part of the link object and used to maintain state across calls. This simplifies each subsequent call by limiting the amount of information required at each step and reduces the potential for errors. Token values cannot be viewed or changed.
+  # @param create_itinerary_request
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :customer_session_id Insert your own unique value for each user session, beginning with the first API call. Continue to pass the same value for each subsequent API call during the user&#39;s session, using a new value for every new customer session.&lt;br&gt; Including this value greatly eases EPS&#39;s internal debugging process for issues with partner requests, as it explicitly links together request paths for individual user&#39;s session. 
-  # @option opts [String] :test The book call has a test header that can be used to return set responses with the following keywords:&lt;br&gt; * &#x60;standard&#x60; * &#x60;complete_payment_session&#x60; * &#x60;service_unavailable&#x60; * &#x60;internal_server_error&#x60; * &#x60;price_mismatch&#x60; * &#x60;cc_declined&#x60; * &#x60;rooms_unavailable&#x60; 
+  # @option opts [String] :customer_session_id Insert your own unique value for each user session, beginning with the first API call. Continue to pass the same value for each subsequent API call during the user&#39;s session, using a new value for every new customer session.&lt;br&gt; Including this value greatly eases EPS&#39;s internal debugging process for issues with partner requests, as it explicitly links together request paths for individual user&#39;s session.
+  # @option opts [String] :test The book call has a test header that can be used to return set responses with the following keywords:&lt;br&gt; * &#x60;standard&#x60; * &#x60;complete_payment_session&#x60; * &#x60;service_unavailable&#x60; * &#x60;internal_server_error&#x60; * &#x60;price_mismatch&#x60; * &#x60;cc_declined&#x60; * &#x60;rooms_unavailable&#x60;
   # @return [ItineraryCreation]
   describe 'post_itinerary test' do
     it 'should work' do
@@ -54,17 +54,17 @@ describe 'BookingsApi' do
 
   # unit tests for post_payment_sessions
   # Register Payments
-  # &lt;b&gt;This link only applies to transactions where EPS takes the customer&#39;s payment information. This includes both Expedia Collect and Property Collect transactions.&lt;/b&gt;&lt;br&gt; This link will be available in the Price Check response if payment registration is required. It returns a payment session ID and a link to create a booking. This will be the first step in the booking flow only if you&#39;ve opted into Two-Factor Authentication to comply with the September 2019 EU Regulations for PSD2. Learn more with our [PSD2 Overview](https://developers.expediagroup.com/docs/rapid/lodging/booking/psd2-regulation) 
-  # @param accept Specifies the response format that the client would like to receive back. This must be &#x60;application/json&#x60;. 
-  # @param accept_encoding Specifies the response encoding that the client would like to receive back. This must be &#x60;gzip&#x60;. 
-  # @param content_type This parameter is to specify what format the request body is in. The only supported value is application/json. 
-  # @param customer_ip IP address of the customer, as captured by your integration.&lt;br&gt; Ensure your integration passes the customer&#39;s IP, not your own. This value helps determine their location and assign the correct payment gateway.&lt;br&gt; Also used for fraud recovery and other important analytics. 
-  # @param user_agent The &#x60;User-Agent&#x60; header string from the customer&#39;s request, as captured by your integration. If you are building an application then the &#x60;User-Agent&#x60; value should be &#x60;{app name}/{app version}&#x60;. 
-  # @param token Provided as part of the link object and used to maintain state across calls. This simplifies each subsequent call by limiting the amount of information required at each step and reduces the potential for errors. Token values cannot be viewed or changed. 
-  # @param payment_sessions_request 
+  # &lt;b&gt;This link only applies to transactions where EPS takes the customer&#39;s payment information. This includes both Expedia Collect and Property Collect transactions.&lt;/b&gt;&lt;br&gt; This link will be available in the Price Check response if payment registration is required. It returns a payment session ID and a link to create a booking. This will be the first step in the booking flow only if you&#39;ve opted into Two-Factor Authentication to comply with the September 2019 EU Regulations for PSD2. Learn more with our [PSD2 Overview](https://developers.expediagroup.com/docs/rapid/lodging/booking/psd2-regulation)
+  # @param accept Specifies the response format that the client would like to receive back. This must be &#x60;application/json&#x60;.
+  # @param accept_encoding Specifies the response encoding that the client would like to receive back. This must be &#x60;gzip&#x60;.
+  # @param content_type This parameter is to specify what format the request body is in. The only supported value is application/json.
+  # @param customer_ip IP address of the customer, as captured by your integration.&lt;br&gt; Ensure your integration passes the customer&#39;s IP, not your own. This value helps determine their location and assign the correct payment gateway.&lt;br&gt; Also used for fraud recovery and other important analytics.
+  # @param user_agent The &#x60;User-Agent&#x60; header string from the customer&#39;s request, as captured by your integration. If you are building an application then the &#x60;User-Agent&#x60; value should be &#x60;{app name}/{app version}&#x60;.
+  # @param token Provided as part of the link object and used to maintain state across calls. This simplifies each subsequent call by limiting the amount of information required at each step and reduces the potential for errors. Token values cannot be viewed or changed.
+  # @param payment_sessions_request
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :customer_session_id Insert your own unique value for each user session, beginning with the first API call. Continue to pass the same value for each subsequent API call during the user&#39;s session, using a new value for every new customer session.&lt;br&gt; Including this value greatly eases EPS&#39;s internal debugging process for issues with partner requests, as it explicitly links together request paths for individual user&#39;s session. 
-  # @option opts [String] :test The book call has a test header that can be used to return set responses with the following keywords:&lt;br&gt; * &#x60;standard&#x60; * &#x60;service_unavailable&#x60; * &#x60;internal_server_error&#x60; 
+  # @option opts [String] :customer_session_id Insert your own unique value for each user session, beginning with the first API call. Continue to pass the same value for each subsequent API call during the user&#39;s session, using a new value for every new customer session.&lt;br&gt; Including this value greatly eases EPS&#39;s internal debugging process for issues with partner requests, as it explicitly links together request paths for individual user&#39;s session.
+  # @option opts [String] :test The book call has a test header that can be used to return set responses with the following keywords:&lt;br&gt; * &#x60;standard&#x60; * &#x60;service_unavailable&#x60; * &#x60;internal_server_error&#x60;
   # @return [PaymentSessions]
   describe 'post_payment_sessions test' do
     it 'should work' do
@@ -74,16 +74,16 @@ describe 'BookingsApi' do
 
   # unit tests for put_complete_payment_session
   # Complete Payment Session
-  # &lt;b&gt;This link only applies to transactions where EPS takes the customer&#39;s payment information. This includes both Expedia Collect and Property Collect transactions.&lt;/b&gt;&lt;br&gt; This link will be available in the booking response only if you&#39;ve opted into Two-Factor Authentication to comply with the September 2019 EU Regulations for PSD2. It should be called after Two-Factor Authentication has been completed by the customer in order to finalize the payment and complete the booking or hold attempt. Learn more with our [PSD2 Overview](https://developers.expediagroup.com/docs/rapid/lodging/booking/psd2-regulation) 
-  # @param accept Specifies the response format that the client would like to receive back. This must be &#x60;application/json&#x60;. 
-  # @param accept_encoding Specifies the response encoding that the client would like to receive back. This must be &#x60;gzip&#x60;. 
-  # @param customer_ip IP address of the customer, as captured by your integration.&lt;br&gt; Ensure your integration passes the customer&#39;s IP, not your own. This value helps determine their location and assign the correct payment gateway.&lt;br&gt; Also used for fraud recovery and other important analytics. 
-  # @param user_agent The &#x60;User-Agent&#x60; header string from the customer&#39;s request, as captured by your integration. If you are building an application then the &#x60;User-Agent&#x60; value should be &#x60;{app name}/{app version}&#x60;. 
-  # @param itinerary_id This parameter is used only to prefix the token value - no ID value is used.&lt;br&gt; 
-  # @param token Provided as part of the link object and used to maintain state across calls. This simplifies each subsequent call by limiting the amount of information required at each step and reduces the potential for errors. Token values cannot be viewed or changed. 
+  # &lt;b&gt;This link only applies to transactions where EPS takes the customer&#39;s payment information. This includes both Expedia Collect and Property Collect transactions.&lt;/b&gt;&lt;br&gt; This link will be available in the booking response only if you&#39;ve opted into Two-Factor Authentication to comply with the September 2019 EU Regulations for PSD2. It should be called after Two-Factor Authentication has been completed by the customer in order to finalize the payment and complete the booking or hold attempt. Learn more with our [PSD2 Overview](https://developers.expediagroup.com/docs/rapid/lodging/booking/psd2-regulation)
+  # @param accept Specifies the response format that the client would like to receive back. This must be &#x60;application/json&#x60;.
+  # @param accept_encoding Specifies the response encoding that the client would like to receive back. This must be &#x60;gzip&#x60;.
+  # @param customer_ip IP address of the customer, as captured by your integration.&lt;br&gt; Ensure your integration passes the customer&#39;s IP, not your own. This value helps determine their location and assign the correct payment gateway.&lt;br&gt; Also used for fraud recovery and other important analytics.
+  # @param user_agent The &#x60;User-Agent&#x60; header string from the customer&#39;s request, as captured by your integration. If you are building an application then the &#x60;User-Agent&#x60; value should be &#x60;{app name}/{app version}&#x60;.
+  # @param itinerary_id This parameter is used only to prefix the token value - no ID value is used.&lt;br&gt;
+  # @param token Provided as part of the link object and used to maintain state across calls. This simplifies each subsequent call by limiting the amount of information required at each step and reduces the potential for errors. Token values cannot be viewed or changed.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :customer_session_id Insert your own unique value for each user session, beginning with the first API call. Continue to pass the same value for each subsequent API call during the user&#39;s session, using a new value for every new customer session.&lt;br&gt; Including this value greatly eases EPS&#39;s internal debugging process for issues with partner requests, as it explicitly links together request paths for individual user&#39;s session. 
-  # @option opts [String] :test The payment-sessions call has a test header that can be used to return set responses with the following keywords:&lt;br&gt; * &#x60;standard&#x60; * &#x60;service_unavailable&#x60; * &#x60;internal_server_error&#x60; 
+  # @option opts [String] :customer_session_id Insert your own unique value for each user session, beginning with the first API call. Continue to pass the same value for each subsequent API call during the user&#39;s session, using a new value for every new customer session.&lt;br&gt; Including this value greatly eases EPS&#39;s internal debugging process for issues with partner requests, as it explicitly links together request paths for individual user&#39;s session.
+  # @option opts [String] :test The payment-sessions call has a test header that can be used to return set responses with the following keywords:&lt;br&gt; * &#x60;standard&#x60; * &#x60;service_unavailable&#x60; * &#x60;internal_server_error&#x60;
   # @return [CompletePaymentSession]
   describe 'put_complete_payment_session test' do
     it 'should work' do
@@ -93,16 +93,16 @@ describe 'BookingsApi' do
 
   # unit tests for put_resume_booking
   # Resume Booking
-  # This link will be available in the booking response after creating a held booking. 
-  # @param accept Specifies the response format that the client would like to receive back. This must be &#x60;application/json&#x60;. 
-  # @param accept_encoding Specifies the response encoding that the client would like to receive back. This must be &#x60;gzip&#x60;. 
-  # @param customer_ip IP address of the customer, as captured by your integration.&lt;br&gt; Ensure your integration passes the customer&#39;s IP, not your own. This value helps determine their location and assign the correct payment gateway.&lt;br&gt; Also used for fraud recovery and other important analytics. 
-  # @param user_agent The &#x60;User-Agent&#x60; header string from the customer&#39;s request, as captured by your integration. If you are building an application then the &#x60;User-Agent&#x60; value should be &#x60;{app name}/{app version}&#x60;. 
-  # @param itinerary_id This parameter is used only to prefix the token value - no ID value is used.&lt;br&gt; 
-  # @param token Provided as part of the link object and used to maintain state across calls. This simplifies each subsequent call by limiting the amount of information required at each step and reduces the potential for errors. Token values cannot be viewed or changed. 
+  # This link will be available in the booking response after creating a held booking.
+  # @param accept Specifies the response format that the client would like to receive back. This must be &#x60;application/json&#x60;.
+  # @param accept_encoding Specifies the response encoding that the client would like to receive back. This must be &#x60;gzip&#x60;.
+  # @param customer_ip IP address of the customer, as captured by your integration.&lt;br&gt; Ensure your integration passes the customer&#39;s IP, not your own. This value helps determine their location and assign the correct payment gateway.&lt;br&gt; Also used for fraud recovery and other important analytics.
+  # @param user_agent The &#x60;User-Agent&#x60; header string from the customer&#39;s request, as captured by your integration. If you are building an application then the &#x60;User-Agent&#x60; value should be &#x60;{app name}/{app version}&#x60;.
+  # @param itinerary_id This parameter is used only to prefix the token value - no ID value is used.&lt;br&gt;
+  # @param token Provided as part of the link object and used to maintain state across calls. This simplifies each subsequent call by limiting the amount of information required at each step and reduces the potential for errors. Token values cannot be viewed or changed.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :customer_session_id Insert your own unique value for each user session, beginning with the first API call. Continue to pass the same value for each subsequent API call during the user&#39;s session, using a new value for every new customer session.&lt;br&gt; Including this value greatly eases EPS&#39;s internal debugging process for issues with partner requests, as it explicitly links together request paths for individual user&#39;s session. 
-  # @option opts [String] :test The resume call has a test header that can be used to return set responses with the following keywords:&lt;br&gt; * &#x60;standard&#x60; - Requires valid test held booking. * &#x60;service_unavailable&#x60; - Returns the HTTP 202 response caused by partial service unavailablity. * &#x60;internal_server_error&#x60; 
+  # @option opts [String] :customer_session_id Insert your own unique value for each user session, beginning with the first API call. Continue to pass the same value for each subsequent API call during the user&#39;s session, using a new value for every new customer session.&lt;br&gt; Including this value greatly eases EPS&#39;s internal debugging process for issues with partner requests, as it explicitly links together request paths for individual user&#39;s session.
+  # @option opts [String] :test The resume call has a test header that can be used to return set responses with the following keywords:&lt;br&gt; * &#x60;standard&#x60; - Requires valid test held booking. * &#x60;service_unavailable&#x60; - Returns the HTTP 202 response caused by partial service unavailablity. * &#x60;internal_server_error&#x60;
   # @return [nil]
   describe 'put_resume_booking test' do
     it 'should work' do

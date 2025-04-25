@@ -73,7 +73,7 @@ module ExpediaRapid
         :'history_id' => :'String',
         :'event_timestamp' => :'String',
         :'event_type' => :'String',
-        :'amount' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
+        :'amount' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
         :'agent_id' => :'Integer'
       }
     end

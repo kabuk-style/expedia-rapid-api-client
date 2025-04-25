@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **value_adds** | [**Hash&lt;String, GetAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsValueAddsValue&gt;**](GetAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsValueAddsValue.md) | Promotions provided by the property that add value to the stay, but don’t affect the booking price (i.e., ski lift tickets or premium wifi). | [optional] |
+| **value_adds** | [**Hash&lt;String, GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsValueAddsValue&gt;**](GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsValueAddsValue.md) | Promotions provided by the property that add value to the stay, but don’t affect the booking price (i.e., ski lift tickets or premium wifi). | [optional] |
 
 ## Example
 

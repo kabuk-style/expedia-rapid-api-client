@@ -21,13 +21,13 @@ module ExpediaRapid
 
     attr_accessor :address
 
-    # Name of the register where the trader is registered, and is related to the `business_register_number` 
+    # Name of the register where the trader is registered, and is related to the `business_register_number`
     attr_accessor :business_register_name
 
-    # Business registration number 
+    # Business registration number
     attr_accessor :business_register_number
 
-    # Certification that the trader has confirmed their commitment to only offer products or services that comply with the applicable rules of Union law. 
+    # Certification that the trader has confirmed their commitment to only offer products or services that comply with the applicable rules of Union law.
     attr_accessor :self_certification
 
     # The trader contact message.

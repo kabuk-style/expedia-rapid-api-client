@@ -20,7 +20,7 @@ module ExpediaRapid
 
     attr_accessor :obfuscated_coordinates
 
-    # When this field is true, the `obfuscated_coordinates` must be used to display approximate location instead of the precise location of `coordinates`. 
+    # When this field is true, the `obfuscated_coordinates` must be used to display approximate location instead of the precise location of `coordinates`.
     attr_accessor :obfuscation_required
 
     # Attribute mapping from ruby-style variable name to JSON key.

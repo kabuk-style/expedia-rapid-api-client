@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module ExpediaRapid
-  # A map of links - * `cancel` - Cancel the booking for this room * `change` - A PUT call to modify the details of the booking for this room (soft change) * `shop_for_change` - Shop for rates to evaluate for possible rebooking. This shop call will show the estimated financial impact of the change.<br>   Current parameters supported in shop for change: `checkin`, `checkout`, `occupancy` See: [additional rates](#get-/properties/-property_id-/availability) 
+  # A map of links - * `cancel` - Cancel the booking for this room * `change` - A PUT call to modify the details of the booking for this room (soft change) * `shop_for_change` - Shop for rates to evaluate for possible rebooking. This shop call will show the estimated financial impact of the change.<br>   Current parameters supported in shop for change: `checkin`, `checkout`, `occupancy` See: [additional rates](#get-/properties/-property_id-/availability)
   class GetReservation200ResponseInnerRoomsInnerLinks
     attr_accessor :cancel
 

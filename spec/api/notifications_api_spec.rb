@@ -34,13 +34,13 @@ describe 'NotificationsApi' do
 
   # unit tests for request_test_notification
   # Request Test Notification
-  # This request triggers a test notification according to the specified event_type. All event types supported by the Notifications API are available to test. 
-  # @param test_notification_request 
+  # This request triggers a test notification according to the specified event_type. All event types supported by the Notifications API are available to test.
+  # @param test_notification_request
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :billing_terms This parameter is to specify the terms of how a resulting booking should be billed. If this field is needed, the value for this will be provided to you separately. 
-  # @option opts [String] :partner_point_of_sale This parameter is to specify what point of sale is being used to shop and book. If this field is needed, the value for this will be provided to you separately. 
-  # @option opts [String] :payment_terms This parameter is to specify what terms should be used when being paid for a resulting booking. If this field is needed, the value for this will be provided to you separately. 
-  # @option opts [String] :platform_name This parameter is to specify what platform is being used to shop and book. If this field is needed, the value for this will be provided to you separately. 
+  # @option opts [String] :billing_terms This parameter is to specify the terms of how a resulting booking should be billed. If this field is needed, the value for this will be provided to you separately.
+  # @option opts [String] :partner_point_of_sale This parameter is to specify what point of sale is being used to shop and book. If this field is needed, the value for this will be provided to you separately.
+  # @option opts [String] :payment_terms This parameter is to specify what terms should be used when being paid for a resulting booking. If this field is needed, the value for this will be provided to you separately.
+  # @option opts [String] :platform_name This parameter is to specify what platform is being used to shop and book. If this field is needed, the value for this will be provided to you separately.
   # @return [nil]
   describe 'request_test_notification test' do
     it 'should work' do
@@ -50,13 +50,13 @@ describe 'NotificationsApi' do
 
   # unit tests for request_undelivered_notifications
   # Request Undelivered Notifications
-  # Use this API to fetch undelivered notifications. Up to 25 notifications are returned with each call. Each undelivered notification will be returned only once. 
+  # Use this API to fetch undelivered notifications. Up to 25 notifications are returned with each call. Each undelivered notification will be returned only once.
   # @param undeliverable Undeliverable notifications are returned when this parameter is set to &#x60;true&#x60;.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :billing_terms This parameter is to specify the terms of how a resulting booking should be billed. If this field is needed, the value for this will be provided to you separately. 
-  # @option opts [String] :partner_point_of_sale This parameter is to specify what point of sale is being used to shop and book. If this field is needed, the value for this will be provided to you separately. 
-  # @option opts [String] :payment_terms This parameter is to specify what terms should be used when being paid for a resulting booking. If this field is needed, the value for this will be provided to you separately. 
-  # @option opts [String] :platform_name This parameter is to specify what platform is being used to shop and book. If this field is needed, the value for this will be provided to you separately. 
+  # @option opts [String] :billing_terms This parameter is to specify the terms of how a resulting booking should be billed. If this field is needed, the value for this will be provided to you separately.
+  # @option opts [String] :partner_point_of_sale This parameter is to specify what point of sale is being used to shop and book. If this field is needed, the value for this will be provided to you separately.
+  # @option opts [String] :payment_terms This parameter is to specify what terms should be used when being paid for a resulting booking. If this field is needed, the value for this will be provided to you separately.
+  # @option opts [String] :platform_name This parameter is to specify what platform is being used to shop and book. If this field is needed, the value for this will be provided to you separately.
   # @return [Array<Notification>]
   describe 'request_undelivered_notifications test' do
     it 'should work' do

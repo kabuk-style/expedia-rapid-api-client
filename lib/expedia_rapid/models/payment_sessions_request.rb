@@ -24,7 +24,7 @@ module ExpediaRapid
     # Encoded browser metadata, provided by the EgPayments.js library.
     attr_accessor :encoded_browser_metadata
 
-    # The preferred window size that needs to be displayed to the customer. Following are the possible values of this field:   * `extra_small`: 250 x 400   * `small`: 390 x 400   * `medium`: 600 x 400   * `large`: 500 x 600   * `full_screen`: Full screen 
+    # The preferred window size that needs to be displayed to the customer. Following are the possible values of this field:   * `extra_small`: 250 x 400   * `small`: 390 x 400   * `medium`: 600 x 400   * `large`: 500 x 600   * `full_screen`: Full screen
     attr_accessor :preferred_challenge_window_size
 
     # Fully qualified URL of merchant website or customer care site.

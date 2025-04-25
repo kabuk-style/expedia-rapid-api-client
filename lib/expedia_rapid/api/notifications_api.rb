@@ -20,13 +20,13 @@ module ExpediaRapid
       @api_client = api_client
     end
     # Request Test Notification
-    # This request triggers a test notification according to the specified event_type. All event types supported by the Notifications API are available to test. 
-    # @param request_test_notification_request [RequestTestNotificationRequest] 
+    # This request triggers a test notification according to the specified event_type. All event types supported by the Notifications API are available to test.
+    # @param request_test_notification_request [RequestTestNotificationRequest]
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :billing_terms This parameter is to specify the terms of how a resulting booking should be billed. If this field is needed, the value for this will be provided to you separately. 
-    # @option opts [String] :partner_point_of_sale This parameter is to specify what point of sale is being used to shop and book. If this field is needed, the value for this will be provided to you separately. 
-    # @option opts [String] :payment_terms This parameter is to specify what terms should be used when being paid for a resulting booking. If this field is needed, the value for this will be provided to you separately. 
-    # @option opts [String] :platform_name This parameter is to specify what platform is being used to shop and book. If this field is needed, the value for this will be provided to you separately. 
+    # @option opts [String] :billing_terms This parameter is to specify the terms of how a resulting booking should be billed. If this field is needed, the value for this will be provided to you separately.
+    # @option opts [String] :partner_point_of_sale This parameter is to specify what point of sale is being used to shop and book. If this field is needed, the value for this will be provided to you separately.
+    # @option opts [String] :payment_terms This parameter is to specify what terms should be used when being paid for a resulting booking. If this field is needed, the value for this will be provided to you separately.
+    # @option opts [String] :platform_name This parameter is to specify what platform is being used to shop and book. If this field is needed, the value for this will be provided to you separately.
     # @return [nil]
     def request_test_notification(request_test_notification_request, opts = {})
       request_test_notification_with_http_info(request_test_notification_request, opts)
@@ -34,13 +34,13 @@ module ExpediaRapid
     end
 
     # Request Test Notification
-    # This request triggers a test notification according to the specified event_type. All event types supported by the Notifications API are available to test. 
-    # @param request_test_notification_request [RequestTestNotificationRequest] 
+    # This request triggers a test notification according to the specified event_type. All event types supported by the Notifications API are available to test.
+    # @param request_test_notification_request [RequestTestNotificationRequest]
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :billing_terms This parameter is to specify the terms of how a resulting booking should be billed. If this field is needed, the value for this will be provided to you separately. 
-    # @option opts [String] :partner_point_of_sale This parameter is to specify what point of sale is being used to shop and book. If this field is needed, the value for this will be provided to you separately. 
-    # @option opts [String] :payment_terms This parameter is to specify what terms should be used when being paid for a resulting booking. If this field is needed, the value for this will be provided to you separately. 
-    # @option opts [String] :platform_name This parameter is to specify what platform is being used to shop and book. If this field is needed, the value for this will be provided to you separately. 
+    # @option opts [String] :billing_terms This parameter is to specify the terms of how a resulting booking should be billed. If this field is needed, the value for this will be provided to you separately.
+    # @option opts [String] :partner_point_of_sale This parameter is to specify what point of sale is being used to shop and book. If this field is needed, the value for this will be provided to you separately.
+    # @option opts [String] :payment_terms This parameter is to specify what terms should be used when being paid for a resulting booking. If this field is needed, the value for this will be provided to you separately.
+    # @option opts [String] :platform_name This parameter is to specify what platform is being used to shop and book. If this field is needed, the value for this will be provided to you separately.
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def request_test_notification_with_http_info(request_test_notification_request, opts = {})
       if @api_client.config.debugging
@@ -100,13 +100,13 @@ module ExpediaRapid
     end
 
     # Request Undelivered Notifications
-    # Use this API to fetch undelivered notifications. Up to 25 notifications are returned with each call. Each undelivered notification will be returned only once. 
+    # Use this API to fetch undelivered notifications. Up to 25 notifications are returned with each call. Each undelivered notification will be returned only once.
     # @param undeliverable [Boolean] Undeliverable notifications are returned when this parameter is set to &#x60;true&#x60;.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :billing_terms This parameter is to specify the terms of how a resulting booking should be billed. If this field is needed, the value for this will be provided to you separately. 
-    # @option opts [String] :partner_point_of_sale This parameter is to specify what point of sale is being used to shop and book. If this field is needed, the value for this will be provided to you separately. 
-    # @option opts [String] :payment_terms This parameter is to specify what terms should be used when being paid for a resulting booking. If this field is needed, the value for this will be provided to you separately. 
-    # @option opts [String] :platform_name This parameter is to specify what platform is being used to shop and book. If this field is needed, the value for this will be provided to you separately. 
+    # @option opts [String] :billing_terms This parameter is to specify the terms of how a resulting booking should be billed. If this field is needed, the value for this will be provided to you separately.
+    # @option opts [String] :partner_point_of_sale This parameter is to specify what point of sale is being used to shop and book. If this field is needed, the value for this will be provided to you separately.
+    # @option opts [String] :payment_terms This parameter is to specify what terms should be used when being paid for a resulting booking. If this field is needed, the value for this will be provided to you separately.
+    # @option opts [String] :platform_name This parameter is to specify what platform is being used to shop and book. If this field is needed, the value for this will be provided to you separately.
     # @return [Array<RequestUndeliveredNotifications200ResponseInner>]
     def request_undelivered_notifications(undeliverable, opts = {})
       data, _status_code, _headers = request_undelivered_notifications_with_http_info(undeliverable, opts)
@@ -114,13 +114,13 @@ module ExpediaRapid
     end
 
     # Request Undelivered Notifications
-    # Use this API to fetch undelivered notifications. Up to 25 notifications are returned with each call. Each undelivered notification will be returned only once. 
+    # Use this API to fetch undelivered notifications. Up to 25 notifications are returned with each call. Each undelivered notification will be returned only once.
     # @param undeliverable [Boolean] Undeliverable notifications are returned when this parameter is set to &#x60;true&#x60;.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :billing_terms This parameter is to specify the terms of how a resulting booking should be billed. If this field is needed, the value for this will be provided to you separately. 
-    # @option opts [String] :partner_point_of_sale This parameter is to specify what point of sale is being used to shop and book. If this field is needed, the value for this will be provided to you separately. 
-    # @option opts [String] :payment_terms This parameter is to specify what terms should be used when being paid for a resulting booking. If this field is needed, the value for this will be provided to you separately. 
-    # @option opts [String] :platform_name This parameter is to specify what platform is being used to shop and book. If this field is needed, the value for this will be provided to you separately. 
+    # @option opts [String] :billing_terms This parameter is to specify the terms of how a resulting booking should be billed. If this field is needed, the value for this will be provided to you separately.
+    # @option opts [String] :partner_point_of_sale This parameter is to specify what point of sale is being used to shop and book. If this field is needed, the value for this will be provided to you separately.
+    # @option opts [String] :payment_terms This parameter is to specify what terms should be used when being paid for a resulting booking. If this field is needed, the value for this will be provided to you separately.
+    # @option opts [String] :platform_name This parameter is to specify what platform is being used to shop and book. If this field is needed, the value for this will be provided to you separately.
     # @return [Array<(Array<RequestUndeliveredNotifications200ResponseInner>, Integer, Hash)>] Array<RequestUndeliveredNotifications200ResponseInner> data, response status code and response headers
     def request_undelivered_notifications_with_http_info(undeliverable, opts = {})
       if @api_client.config.debugging

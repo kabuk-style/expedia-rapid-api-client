@@ -14,7 +14,6 @@ require 'date'
 require 'time'
 
 module ExpediaRapid
-  # The rooms and rates for a property.
   class GetAvailability200ResponseInner
     # Expedia property ID.
     attr_accessor :property_id
@@ -24,11 +23,6 @@ module ExpediaRapid
 
     # A score to sort properties where the higher the value the better. It can be used to:<br> * Sort the properties on the response<br> * Sort properties across multiple responses in parallel searches for large regions<br>
     attr_accessor :score
-
-    # Array of objects containing room information.
-    attr_accessor :rooms
-
-    attr_accessor :links
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -57,9 +51,7 @@ module ExpediaRapid
       {
         :'property_id' => :'property_id',
         :'status' => :'status',
-        :'score' => :'score',
-        :'rooms' => :'rooms',
-        :'links' => :'links'
+        :'score' => :'score'
       }
     end
 
@@ -73,9 +65,7 @@ module ExpediaRapid
       {
         :'property_id' => :'String',
         :'status' => :'String',
-        :'score' => :'Float',
-        :'rooms' => :'Array<GetAvailability200ResponseInnerRoomsInner>',
-        :'links' => :'GetAvailability200ResponseInnerLinks'
+        :'score' => :'Float'
       }
     end
 
@@ -116,16 +106,6 @@ module ExpediaRapid
       if attributes.key?(:'score')
         self.score = attributes[:'score']
       end
-
-      if attributes.key?(:'rooms')
-        if (value = attributes[:'rooms']).is_a?(Array)
-          self.rooms = value
-        end
-      end
-
-      if attributes.key?(:'links')
-        self.links = attributes[:'links']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -162,9 +142,7 @@ module ExpediaRapid
       self.class == o.class &&
           property_id == o.property_id &&
           status == o.status &&
-          score == o.score &&
-          rooms == o.rooms &&
-          links == o.links
+          score == o.score
     end
 
     # @see the `==` method
@@ -176,7 +154,7 @@ module ExpediaRapid
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [property_id, status, score, rooms, links].hash
+      [property_id, status, score].hash
     end
 
     # Builds the object from hash

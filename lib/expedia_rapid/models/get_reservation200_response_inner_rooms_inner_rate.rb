@@ -19,7 +19,7 @@ module ExpediaRapid
     # The id of the rate.
     attr_accessor :id
 
-    # * `expedia` - Payment is taken by Expedia. * `property` - Payment is taken by the property. 
+    # * `expedia` - Payment is taken by Expedia. * `property` - Payment is taken by the property.
     attr_accessor :merchant_of_record
 
     # Indicates whether the itinerary is refundable or not.
@@ -34,7 +34,7 @@ module ExpediaRapid
     # The cancel penalties associated with the itinerary.
     attr_accessor :cancel_penalties
 
-    # A list of date exceptions. Dates within these ranges provide no refund on cancellation, regardless of cancel penalty windows. Nonrefundable range begins at 00:00:00 on the start date, and ends at 23:59:59 on the end date, in the local time zone of the property. 
+    # A list of date exceptions. Dates within these ranges provide no refund on cancellation, regardless of cancel penalty windows. Nonrefundable range begins at 00:00:00 on the start date, and ends at 23:59:59 on the end date, in the local time zone of the property.
     attr_accessor :nonrefundable_date_ranges
 
     attr_accessor :deposits
@@ -99,12 +99,12 @@ module ExpediaRapid
         :'cancel_refund' => :'GetReservation200ResponseInnerRoomsInnerRateCancelRefund',
         :'amenities' => :'Array<String>',
         :'promotions' => :'GetReservation200ResponseInnerRoomsInnerRatePromotions',
-        :'cancel_penalties' => :'Array<GetAvailability200ResponseInnerRoomsInnerRatesInnerCancelPenaltiesInner>',
-        :'nonrefundable_date_ranges' => :'Array<GetAvailability200ResponseInnerRoomsInnerRatesInnerNonrefundableDateRangesInner>',
+        :'cancel_penalties' => :'Array<GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerCancelPenaltiesInner>',
+        :'nonrefundable_date_ranges' => :'Array<GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerNonrefundableDateRangesInner>',
         :'deposits' => :'Array<GetReservation200ResponseInnerRoomsInnerRateDepositsInner>',
-        :'card_on_file_limit' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
-        :'refundable_damage_deposit' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
-        :'pricing' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValue'
+        :'card_on_file_limit' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
+        :'refundable_damage_deposit' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotalsInclusiveBillableCurrency',
+        :'pricing' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValue'
       }
     end
 

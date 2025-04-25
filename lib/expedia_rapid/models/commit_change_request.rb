@@ -15,7 +15,7 @@ require 'time'
 
 module ExpediaRapid
   class CommitChangeRequest
-    # Your optional identifier for the change being executed. Only unique per itinerary. Special characters (\"<\", \">\", \"(\", \")\", and \"&\") entered in this field will be re-encoded. 
+    # Your optional identifier for the change being executed. Only unique per itinerary. Special characters (\"<\", \">\", \"(\", \")\", and \"&\") entered in this field will be re-encoded.
     attr_accessor :change_reference_id
 
     attr_accessor :payments

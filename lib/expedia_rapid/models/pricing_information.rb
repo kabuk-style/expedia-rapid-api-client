@@ -44,10 +44,10 @@ module ExpediaRapid
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'nightly' => :'Array<Array<GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueNightlyInnerInner>>',
-        :'stay' => :'Array<GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueStayInner>',
-        :'totals' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotals',
-        :'fees' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueFees'
+        :'nightly' => :'Array<Array<GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueNightlyInnerInner>>',
+        :'stay' => :'Array<GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueStayInner>',
+        :'totals' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueTotals',
+        :'fees' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueFees'
       }
     end
 

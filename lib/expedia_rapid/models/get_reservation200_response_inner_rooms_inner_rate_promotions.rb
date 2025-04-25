@@ -34,7 +34,7 @@ module ExpediaRapid
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'value_adds' => :'Hash<String, GetAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsValueAddsValue>'
+        :'value_adds' => :'Hash<String, GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerPromotionsValueAddsValue>'
       }
     end
 

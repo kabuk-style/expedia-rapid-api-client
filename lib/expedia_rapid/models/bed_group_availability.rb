@@ -44,7 +44,7 @@ module ExpediaRapid
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'links' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerBedGroupsValueLinks',
+        :'links' => :'GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInnerBedGroupsValueLinks',
         :'id' => :'String',
         :'description' => :'String',
         :'configuration' => :'Array<GetPropertyContent200ResponseValueRoomsValueBedGroupsValueConfigurationInner>'

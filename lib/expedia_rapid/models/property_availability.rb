@@ -74,8 +74,8 @@ module ExpediaRapid
         :'property_id' => :'String',
         :'status' => :'String',
         :'score' => :'Float',
-        :'rooms' => :'Array<GetAvailability200ResponseInnerRoomsInner>',
-        :'links' => :'GetAvailability200ResponseInnerLinks'
+        :'rooms' => :'Array<GetAdditionalAvailability200ResponseInnerRoomsInner>',
+        :'links' => :'GetAdditionalAvailability200ResponseInnerLinks'
       }
     end
 

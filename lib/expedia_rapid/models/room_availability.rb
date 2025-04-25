@@ -44,7 +44,7 @@ module ExpediaRapid
       {
         :'id' => :'String',
         :'room_name' => :'String',
-        :'rates' => :'Array<GetAvailability200ResponseInnerRoomsInnerRatesInner>'
+        :'rates' => :'Array<GetAdditionalAvailability200ResponseInnerRoomsInnerRatesInner>'
       }
     end
 

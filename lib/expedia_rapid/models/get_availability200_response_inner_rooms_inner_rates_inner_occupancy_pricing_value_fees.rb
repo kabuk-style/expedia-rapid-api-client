@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module ExpediaRapid
-  # The fees collected by the property. The values for each type of fee are the total for that type.  Mandatory fees are collected by the property at check-in or check-out. Resort fees are charged for amenities and extras and collected by the property at check-in or check-out. Mandatory taxes are taxes collected by the property at check-in or check-out. 
+  # The fees collected by the property. The values for each type of fee are the total for that type.  Mandatory fees are collected by the property at check-in or check-out. Resort fees are charged for amenities and extras and collected by the property at check-in or check-out. Mandatory taxes are taxes collected by the property at check-in or check-out.
   class GetAvailability200ResponseInnerRoomsInnerRatesInnerOccupancyPricingValueFees
     attr_accessor :mandatory_fee
 

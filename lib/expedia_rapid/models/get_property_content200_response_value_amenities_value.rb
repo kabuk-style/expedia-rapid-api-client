@@ -25,7 +25,7 @@ module ExpediaRapid
     # Amenity value.
     attr_accessor :value
 
-    # This is an optional field and will be present only if the amenity falls into one or more of these amenity categories.<br> See the Amenity Categories section of the [Content Reference Lists](https://developers.expediagroup.com/docs/rapid/lodging/content/content-reference-lists) for a list of values. 
+    # This is an optional field and will be present only if the amenity falls into one or more of these amenity categories.<br> See the Amenity Categories section of the [Content Reference Lists](https://developers.expediagroup.com/docs/rapid/lodging/content/content-reference-lists) for a list of values.
     attr_accessor :categories
 
     # Attribute mapping from ruby-style variable name to JSON key.
