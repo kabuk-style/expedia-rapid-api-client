@@ -53,10 +53,18 @@ module ExpediaRapid
     # Value potentially passed in during the availability request to indicate the purpose of the trip designated by the traveler. 
     attr_accessor :travel_purpose
 
+    attr_accessor :supplier_transparency
+
+    attr_accessor :additional_handling
+
+    attr_accessor :invoicing
+
     attr_accessor :itinerary_history
 
     # An array of rooms each containing an array of room history events.
     attr_accessor :room_history
+
+    attr_accessor :impacted_fields
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -98,8 +106,12 @@ module ExpediaRapid
         :'trader_information' => :'trader_information',
         :'essential_information' => :'essential_information',
         :'travel_purpose' => :'travel_purpose',
+        :'supplier_transparency' => :'supplier_transparency',
+        :'additional_handling' => :'additional_handling',
+        :'invoicing' => :'invoicing',
         :'itinerary_history' => :'itinerary_history',
-        :'room_history' => :'room_history'
+        :'room_history' => :'room_history',
+        :'impacted_fields' => :'impacted_fields'
       }
     end
 
@@ -115,7 +127,7 @@ module ExpediaRapid
         :'property_id' => :'String',
         :'links' => :'GetReservation200ResponseInnerLinks',
         :'email' => :'String',
-        :'phone' => :'GetReservation200ResponseInnerPhone',
+        :'phone' => :'PostPaymentSessionsRequestPaymentsInnerAdditionalHandlingCardContactPhone',
         :'rooms' => :'Array<GetReservation200ResponseInnerRoomsInner>',
         :'billing_contact' => :'GetReservation200ResponseInnerBillingContact',
         :'adjustment' => :'GetReservation200ResponseInnerAdjustment',
@@ -126,8 +138,12 @@ module ExpediaRapid
         :'trader_information' => :'PriceCheck200ResponseTraderInformation',
         :'essential_information' => :'GetReservation200ResponseInnerEssentialInformation',
         :'travel_purpose' => :'String',
+        :'supplier_transparency' => :'GetReservation200ResponseInnerSupplierTransparency',
+        :'additional_handling' => :'PostPaymentSessionsRequestPaymentsInnerAdditionalHandling',
+        :'invoicing' => :'GetReservation200ResponseInnerInvoicing',
         :'itinerary_history' => :'Array<GetReservation200ResponseInnerItineraryHistoryInner>',
-        :'room_history' => :'Array<Array<GetReservation200ResponseInnerRoomHistoryInnerInner>>'
+        :'room_history' => :'Array<Array<GetReservation200ResponseInnerRoomHistoryInnerInner>>',
+        :'impacted_fields' => :'Array<String>'
       }
     end
 
@@ -214,6 +230,18 @@ module ExpediaRapid
         self.travel_purpose = attributes[:'travel_purpose']
       end
 
+      if attributes.key?(:'supplier_transparency')
+        self.supplier_transparency = attributes[:'supplier_transparency']
+      end
+
+      if attributes.key?(:'additional_handling')
+        self.additional_handling = attributes[:'additional_handling']
+      end
+
+      if attributes.key?(:'invoicing')
+        self.invoicing = attributes[:'invoicing']
+      end
+
       if attributes.key?(:'itinerary_history')
         if (value = attributes[:'itinerary_history']).is_a?(Array)
           self.itinerary_history = value
@@ -223,6 +251,12 @@ module ExpediaRapid
       if attributes.key?(:'room_history')
         if (value = attributes[:'room_history']).is_a?(Array)
           self.room_history = value
+        end
+      end
+
+      if attributes.key?(:'impacted_fields')
+        if (value = attributes[:'impacted_fields']).is_a?(Array)
+          self.impacted_fields = value
         end
       end
     end
@@ -274,8 +308,12 @@ module ExpediaRapid
           trader_information == o.trader_information &&
           essential_information == o.essential_information &&
           travel_purpose == o.travel_purpose &&
+          supplier_transparency == o.supplier_transparency &&
+          additional_handling == o.additional_handling &&
+          invoicing == o.invoicing &&
           itinerary_history == o.itinerary_history &&
-          room_history == o.room_history
+          room_history == o.room_history &&
+          impacted_fields == o.impacted_fields
     end
 
     # @see the `==` method
@@ -287,7 +325,7 @@ module ExpediaRapid
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [itinerary_id, property_id, links, email, phone, rooms, billing_contact, adjustment, creation_date_time, affiliate_reference_id, affiliate_metadata, conversations, trader_information, essential_information, travel_purpose, itinerary_history, room_history].hash
+      [itinerary_id, property_id, links, email, phone, rooms, billing_contact, adjustment, creation_date_time, affiliate_reference_id, affiliate_metadata, conversations, trader_information, essential_information, travel_purpose, supplier_transparency, additional_handling, invoicing, itinerary_history, room_history, impacted_fields].hash
     end
 
     # Builds the object from hash
@@ -401,5 +439,7 @@ module ExpediaRapid
         value
       end
     end
+
   end
+
 end

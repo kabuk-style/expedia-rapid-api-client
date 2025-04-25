@@ -45,7 +45,7 @@ module ExpediaRapid
     def self.openapi_types
       {
         :'name' => :'String',
-        :'phone' => :'GetReservation200ResponseInnerPhone',
+        :'phone' => :'PostPaymentSessionsRequestPaymentsInnerAdditionalHandlingCardContactPhone',
         :'email' => :'String',
         :'address' => :'GetReservation200ResponseInnerBillingContactAddress'
       }
@@ -238,5 +238,7 @@ module ExpediaRapid
         value
       end
     end
+
   end
+
 end

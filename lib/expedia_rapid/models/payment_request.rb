@@ -15,7 +15,7 @@ require 'time'
 
 module ExpediaRapid
   class PaymentRequest
-    # Identifier for the type of payment. If affiliate_collect, card information is not required as EPS will not be processing the payment. However, billing contact information is still required.
+    # Identifier for the type of payment. If affiliate_collect, card information is not required as EPS will not be processing the payment. However, billing contact information is still required. 
     attr_accessor :type
 
     # Card number. Required for credit card transactions.
@@ -34,8 +34,10 @@ module ExpediaRapid
 
     attr_accessor :third_party_authentication
 
-    # Date the payment account was enrolled in the cardholder's account with the merchant, in ISO 8601 format (YYYY-MM-DD).
+    # Date the payment account was enrolled in the cardholder's account with the merchant, in ISO 8601 format (YYYY-MM-DD). 
     attr_accessor :enrollment_date
+
+    attr_accessor :additional_handling
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -69,7 +71,8 @@ module ExpediaRapid
         :'expiration_year' => :'expiration_year',
         :'billing_contact' => :'billing_contact',
         :'third_party_authentication' => :'third_party_authentication',
-        :'enrollment_date' => :'enrollment_date'
+        :'enrollment_date' => :'enrollment_date',
+        :'additional_handling' => :'additional_handling'
       }
     end
 
@@ -88,7 +91,8 @@ module ExpediaRapid
         :'expiration_year' => :'String',
         :'billing_contact' => :'PostPaymentSessionsRequestPaymentsInnerBillingContact',
         :'third_party_authentication' => :'PostPaymentSessionsRequestPaymentsInnerThirdPartyAuthentication',
-        :'enrollment_date' => :'String'
+        :'enrollment_date' => :'String',
+        :'additional_handling' => :'PostPaymentSessionsRequestPaymentsInnerAdditionalHandling'
       }
     end
 
@@ -148,6 +152,10 @@ module ExpediaRapid
       if attributes.key?(:'enrollment_date')
         self.enrollment_date = attributes[:'enrollment_date']
       end
+
+      if attributes.key?(:'additional_handling')
+        self.additional_handling = attributes[:'additional_handling']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -199,7 +207,8 @@ module ExpediaRapid
           expiration_year == o.expiration_year &&
           billing_contact == o.billing_contact &&
           third_party_authentication == o.third_party_authentication &&
-          enrollment_date == o.enrollment_date
+          enrollment_date == o.enrollment_date &&
+          additional_handling == o.additional_handling
     end
 
     # @see the `==` method
@@ -211,7 +220,7 @@ module ExpediaRapid
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, number, security_code, expiration_month, expiration_year, billing_contact, third_party_authentication, enrollment_date].hash
+      [type, number, security_code, expiration_month, expiration_year, billing_contact, third_party_authentication, enrollment_date, additional_handling].hash
     end
 
     # Builds the object from hash
@@ -325,5 +334,7 @@ module ExpediaRapid
         value
       end
     end
+
   end
+
 end

@@ -28,6 +28,9 @@ module ExpediaRapid
     # Indicates if the rate is fully refundable at the time of booking. Cancel penalties may still apply. Please refer to the cancel penalties section for reference.
     attr_accessor :refundable
 
+    # Indicates the current refundability of the rate. This is a more detailed version of the `refundable` field.
+    attr_accessor :current_refundability
+
     # Indicates if a \"Member Only Deal\" is available for this rate.
     attr_accessor :member_deal_available
 
@@ -94,6 +97,7 @@ module ExpediaRapid
         :'status' => :'status',
         :'available_rooms' => :'available_rooms',
         :'refundable' => :'refundable',
+        :'current_refundability' => :'current_refundability',
         :'member_deal_available' => :'member_deal_available',
         :'sale_scenario' => :'sale_scenario',
         :'merchant_of_record' => :'merchant_of_record',
@@ -123,6 +127,7 @@ module ExpediaRapid
         :'status' => :'String',
         :'available_rooms' => :'Float',
         :'refundable' => :'Boolean',
+        :'current_refundability' => :'String',
         :'member_deal_available' => :'Boolean',
         :'sale_scenario' => :'GetAvailability200ResponseInnerRoomsInnerRatesInnerSaleScenario',
         :'merchant_of_record' => :'String',
@@ -175,6 +180,10 @@ module ExpediaRapid
 
       if attributes.key?(:'refundable')
         self.refundable = attributes[:'refundable']
+      end
+
+      if attributes.key?(:'current_refundability')
+        self.current_refundability = attributes[:'current_refundability']
       end
 
       if attributes.key?(:'member_deal_available')
@@ -262,6 +271,8 @@ module ExpediaRapid
       warn '[DEPRECATED] the `valid?` method is obsolete'
       status_validator = EnumAttributeValidator.new('String', ["available", "price_changed", "sold_out"])
       return false unless status_validator.valid?(@status)
+      current_refundability_validator = EnumAttributeValidator.new('String', ["refundable", "non_refundable", "partially_refundable"])
+      return false unless current_refundability_validator.valid?(@current_refundability)
       merchant_of_record_validator = EnumAttributeValidator.new('String', ["expedia", "property"])
       return false unless merchant_of_record_validator.valid?(@merchant_of_record)
       true
@@ -275,6 +286,16 @@ module ExpediaRapid
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end
       @status = status
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] current_refundability Object to be assigned
+    def current_refundability=(current_refundability)
+      validator = EnumAttributeValidator.new('String', ["refundable", "non_refundable", "partially_refundable"])
+      unless validator.valid?(current_refundability)
+        fail ArgumentError, "invalid value for \"current_refundability\", must be one of #{validator.allowable_values}."
+      end
+      @current_refundability = current_refundability
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -296,6 +317,7 @@ module ExpediaRapid
           status == o.status &&
           available_rooms == o.available_rooms &&
           refundable == o.refundable &&
+          current_refundability == o.current_refundability &&
           member_deal_available == o.member_deal_available &&
           sale_scenario == o.sale_scenario &&
           merchant_of_record == o.merchant_of_record &&
@@ -321,7 +343,7 @@ module ExpediaRapid
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, status, available_rooms, refundable, member_deal_available, sale_scenario, merchant_of_record, amenities, links, bed_groups, cancel_penalties, nonrefundable_date_ranges, marketing_fee_incentives, occupancy_pricing, promotions, card_on_file_limit, refundable_damage_deposit, deposits].hash
+      [id, status, available_rooms, refundable, current_refundability, member_deal_available, sale_scenario, merchant_of_record, amenities, links, bed_groups, cancel_penalties, nonrefundable_date_ranges, marketing_fee_incentives, occupancy_pricing, promotions, card_on_file_limit, refundable_damage_deposit, deposits].hash
     end
 
     # Builds the object from hash
@@ -435,5 +457,7 @@ module ExpediaRapid
         value
       end
     end
+
   end
+
 end

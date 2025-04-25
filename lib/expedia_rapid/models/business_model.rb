@@ -22,11 +22,15 @@ module ExpediaRapid
     # Whether or not a payment for this property can be taken by the property upon arrival.
     attr_accessor :property_collect
 
+    # Whether or not a payment for this property can be taken by Expedia at the time of booking and whether a VAT invoice can be requested from the property if the property is accountable to provide such a document.
+    attr_accessor :updated_expedia_collect
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'expedia_collect' => :'expedia_collect',
-        :'property_collect' => :'property_collect'
+        :'property_collect' => :'property_collect',
+        :'updated_expedia_collect' => :'updated_expedia_collect'
       }
     end
 
@@ -39,7 +43,8 @@ module ExpediaRapid
     def self.openapi_types
       {
         :'expedia_collect' => :'Boolean',
-        :'property_collect' => :'Boolean'
+        :'property_collect' => :'Boolean',
+        :'updated_expedia_collect' => :'Boolean'
       }
     end
 
@@ -71,6 +76,10 @@ module ExpediaRapid
       if attributes.key?(:'property_collect')
         self.property_collect = attributes[:'property_collect']
       end
+
+      if attributes.key?(:'updated_expedia_collect')
+        self.updated_expedia_collect = attributes[:'updated_expedia_collect']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -94,7 +103,8 @@ module ExpediaRapid
       return true if self.equal?(o)
       self.class == o.class &&
           expedia_collect == o.expedia_collect &&
-          property_collect == o.property_collect
+          property_collect == o.property_collect &&
+          updated_expedia_collect == o.updated_expedia_collect
     end
 
     # @see the `==` method
@@ -106,7 +116,7 @@ module ExpediaRapid
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [expedia_collect, property_collect].hash
+      [expedia_collect, property_collect, updated_expedia_collect].hash
     end
 
     # Builds the object from hash
@@ -220,5 +230,7 @@ module ExpediaRapid
         value
       end
     end
+
   end
+
 end
