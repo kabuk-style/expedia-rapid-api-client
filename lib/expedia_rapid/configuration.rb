@@ -263,17 +263,14 @@ module ExpediaRapid
       [
         {
           url: "https://test.ean.com/v3",
-          description: "Test Server",
-        },
-        {
-          url: "https://api.ean.com/v3",
-          description: "Production Server",
+          description: "No description provided",
         }
       ]
     end
 
     def operation_server_settings
-      {}
+      {
+      }
     end
 
     # Returns URL based on server settings

@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | The contact name. | [optional] |
-| **phone** | [**GetReservation200ResponseInnerPhone**](GetReservation200ResponseInnerPhone.md) |  | [optional] |
+| **phone** | [**PostPaymentSessionsRequestPaymentsInnerAdditionalHandlingCardContactPhone**](PostPaymentSessionsRequestPaymentsInnerAdditionalHandlingCardContactPhone.md) |  | [optional] |
 | **email** | **String** | Email address for the contact. | [optional] |
 | **address** | [**GetReservation200ResponseInnerBillingContactAddress**](GetReservation200ResponseInnerBillingContactAddress.md) |  | [optional] |
 

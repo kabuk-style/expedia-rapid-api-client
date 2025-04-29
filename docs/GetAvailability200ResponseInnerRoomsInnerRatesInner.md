@@ -8,6 +8,7 @@
 | **status** | **String** | Indicates the status of the rate. If the rate is still available then available will be returned. If the rate is no longer available at that price then price_changed will be returned. If the rate is no longer available at all then sold_out will be returned. | [optional] |
 | **available_rooms** | **Float** | The number of bookable rooms remaining with this rate in EPS inventory. Use this value to create rules for urgency messaging to alert users to low availability on busy travel dates or at popular properties. If the value returns as 2147483647 (max int value), the actual value could not be determined. Ensure your urgency messaging ignores such instances when returned. | [optional] |
 | **refundable** | **Boolean** | Indicates if the rate is fully refundable at the time of booking. Cancel penalties may still apply. Please refer to the cancel penalties section for reference. | [optional] |
+| **current_refundability** | **String** | Indicates the current refundability of the rate. This is a more detailed version of the &#x60;refundable&#x60; field. | [optional] |
 | **member_deal_available** | **Boolean** | Indicates if a \&quot;Member Only Deal\&quot; is available for this rate. | [optional] |
 | **sale_scenario** | [**GetAvailability200ResponseInnerRoomsInnerRatesInnerSaleScenario**](GetAvailability200ResponseInnerRoomsInnerRatesInnerSaleScenario.md) |  | [optional] |
 | **merchant_of_record** | **String** | * &#x60;expedia&#x60; - Payment is taken by Expedia. * &#x60;property&#x60; - Payment is taken by the property.  | [optional] |
@@ -33,6 +34,7 @@ instance = ExpediaRapid::GetAvailability200ResponseInnerRoomsInnerRatesInner.new
   status: null,
   available_rooms: null,
   refundable: null,
+  current_refundability: null,
   member_deal_available: null,
   sale_scenario: null,
   merchant_of_record: null,

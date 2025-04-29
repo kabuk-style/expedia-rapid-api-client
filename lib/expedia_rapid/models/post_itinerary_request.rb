@@ -15,32 +15,34 @@ require 'time'
 
 module ExpediaRapid
   class PostItineraryRequest
-    # Your unique reference value. This field supports from 3 to a maximum of 28 characters and is required to be unique (if provided). Entering special characters (\"<\", \">\", \"(\", \")\", and \"&\") in this field will result in the request being rejected.
+    # Your unique reference value. This field supports from 3 to a maximum of 28 characters and is required to be unique (if provided). Entering special characters (\"<\", \">\", \"(\", \")\", and \"&\") in this field will result in the request being rejected. 
     attr_accessor :affiliate_reference_id
 
-    # Flag for placing a booking on hold. The booking will be released if the resume link is not followed within the hold period. Please refer to our Hold and Resume documentation.
+    # Flag for placing a booking on hold. The booking will be released if the resume link is not followed within the hold period. Please refer to our Hold and Resume documentation. 
     attr_accessor :hold
 
-    # Email address for the customer. Must adhere to standard RFC 822 email format. Special characters (\"<\", \">\", \"(\", \")\", and \"&\") entered in this field will be re-encoded.
+    # Email address for the customer. Must adhere to standard RFC 822 email format. Special characters (\"<\", \">\", \"(\", \")\", and \"&\") entered in this field will be re-encoded. 
     attr_accessor :email
 
     attr_accessor :phone
 
     attr_accessor :rooms
 
-    # Required if payment information prior to booking was not submitted. If register payments was called prior to this call, do not submit payment information again.
+    # Required if payment information prior to booking was not submitted. If register payments was called prior to this call, do not submit payment information again. 
     attr_accessor :payments
 
-    # Field that stores up to 256 characters of additional metadata with the itinerary. Will be returned on all retrieve responses for this itinerary. The data must be in the format 'key1:value|key2:value|key3:value'. Other Special characters (\"<\", \">\", \"(\", \")\", and \"&\") entered in this field will be re-encoded.
+    # Field that stores up to 256 characters of additional metadata with the itinerary. Will be returned on all retrieve responses for this itinerary. The data must be in the format 'key1:value|key2:value|key3:value'. Other Special characters (\"<\", \">\", \"(\", \")\", and \"&\") entered in this field will be re-encoded. 
     attr_accessor :affiliate_metadata
 
-    # The customer's taxpayer identification number that is provided by the government to nationals or resident aliens. This number should be collected from individuals that pay taxes or participate in activities that provide revenue for one or more tax types. Note: This value is only needed from Brazilian and Indian customers.
+    # The customer's taxpayer identification number that is provided by the government to nationals or resident aliens. This number should be collected from individuals that pay taxes or participate in activities that provide revenue for one or more tax types. *Note:* This value is only needed from Brazilian and Indian customers. 
     attr_accessor :tax_registration_number
 
     # Custom traveler handling instructions for the hotel. Do not include PCI sensitive data, such as credit card numbers, in this field.
     attr_accessor :traveler_handling_instructions
 
     attr_accessor :invoicing
+
+    attr_accessor :supplier_transparency
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -54,7 +56,8 @@ module ExpediaRapid
         :'affiliate_metadata' => :'affiliate_metadata',
         :'tax_registration_number' => :'tax_registration_number',
         :'traveler_handling_instructions' => :'traveler_handling_instructions',
-        :'invoicing' => :'invoicing'
+        :'invoicing' => :'invoicing',
+        :'supplier_transparency' => :'supplier_transparency'
       }
     end
 
@@ -75,7 +78,8 @@ module ExpediaRapid
         :'affiliate_metadata' => :'String',
         :'tax_registration_number' => :'String',
         :'traveler_handling_instructions' => :'String',
-        :'invoicing' => :'PostItineraryRequestInvoicing'
+        :'invoicing' => :'GetReservation200ResponseInnerInvoicing',
+        :'supplier_transparency' => :'GetReservation200ResponseInnerSupplierTransparency'
       }
     end
 
@@ -149,6 +153,10 @@ module ExpediaRapid
       if attributes.key?(:'invoicing')
         self.invoicing = attributes[:'invoicing']
       end
+
+      if attributes.key?(:'supplier_transparency')
+        self.supplier_transparency = attributes[:'supplier_transparency']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -195,7 +203,8 @@ module ExpediaRapid
           affiliate_metadata == o.affiliate_metadata &&
           tax_registration_number == o.tax_registration_number &&
           traveler_handling_instructions == o.traveler_handling_instructions &&
-          invoicing == o.invoicing
+          invoicing == o.invoicing &&
+          supplier_transparency == o.supplier_transparency
     end
 
     # @see the `==` method
@@ -207,7 +216,7 @@ module ExpediaRapid
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [affiliate_reference_id, hold, email, phone, rooms, payments, affiliate_metadata, tax_registration_number, traveler_handling_instructions, invoicing].hash
+      [affiliate_reference_id, hold, email, phone, rooms, payments, affiliate_metadata, tax_registration_number, traveler_handling_instructions, invoicing, supplier_transparency].hash
     end
 
     # Builds the object from hash
