@@ -19,10 +19,14 @@ module ExpediaRapid
     # The time by which a guest must check out.
     attr_accessor :time
 
+    # The property's check-out policy.
+    attr_accessor :instructions
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'time' => :'time'
+        :'time' => :'time',
+        :'instructions' => :'instructions'
       }
     end
 
@@ -34,7 +38,8 @@ module ExpediaRapid
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'time' => :'String'
+        :'time' => :'String',
+        :'instructions' => :'String'
       }
     end
 
@@ -62,6 +67,10 @@ module ExpediaRapid
       if attributes.key?(:'time')
         self.time = attributes[:'time']
       end
+
+      if attributes.key?(:'instructions')
+        self.instructions = attributes[:'instructions']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -84,7 +93,8 @@ module ExpediaRapid
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          time == o.time
+          time == o.time &&
+          instructions == o.instructions
     end
 
     # @see the `==` method
@@ -96,7 +106,7 @@ module ExpediaRapid
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [time].hash
+      [time, instructions].hash
     end
 
     # Builds the object from hash
