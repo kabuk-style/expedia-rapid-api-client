@@ -22,38 +22,54 @@ module ExpediaRapid
         @headers = headers
       end
 
+      # Request capacity per day.
       def day
         @headers['rate-limit-day']
       end
 
+      # Remaining capacity
       def day_remaining
         @headers['rate-limit-day-remaining']
       end
 
+      # Timestamp - number of milliseconds since the Unix Epoch, when the daily capacity resets
       def day_reset
         @headers['rate-limit-day-reset']
       end
 
+      # Request capacity per minute
+      def minute
+        @headers['rate-limit-minute']
+      end
+
+      # Remaining capacity as a percentage for the per minute time window
       def minute_remaining
         @headers['rate-limit-minute-remaining']
       end
 
+      # Timestamp, as the number of milliseconds since the Unix Epoch, when the per minute capacity resets.
       def minute_reset
         @headers['rate-limit-minute-reset']
       end
 
+      # Indicates the state (inactive, active) of minute capacity reduction triggered once all daily capacity has been used.
       def reduction_status
         @headers['rate-limit-reduction-status']
       end
     end
 
+    # Contains a single link to get the immediate next page of results, and follows the IETF standard.
+    # To get the next page of results, simply follow the next URL in this header without modifying it.
+    # This header will be missing when there are no further pages.
+    # If the link expires, there will be an expires link-extension that is the UTC date the link will expire, in ISO 8601 format.
     class Link
-      attr_reader :url, :rel, :expires
+      attr_reader :url, :rel, :expires, :token
 
       # @param link_header [String] The value of the Link header
       #   e.g, `<https://test.ean.com/v3/properties/content?token=Q11RF1Vda1AA==>; rel="next"; expires=2025-05-15T04:26:28.396740369Z`
       def initialize(link_header)
         parse_link_header(link_header) if link_header
+        extract_token if @url
       end
 
       private
@@ -67,6 +83,12 @@ module ExpediaRapid
         @rel = rel_match[1] if rel_match
         @expires = Time.parse(expires_match[1]) if expires_match
       end
+
+      def extract_token
+        uri = URI.parse(@url)
+        params = URI.decode_www_form(uri.query || '').to_h
+        @token = params['token']
+      end
     end
 
     # @param headers [Faraday::Utils::Headers] The response headers
@@ -74,9 +96,9 @@ module ExpediaRapid
       @headers = headers
     end
 
-    # Custom Headers
+    # Custom Headers Starts
     def link
-      @headers['link']
+      Link.new(@headers['link']) if @headers['link']
     end
 
     def load
@@ -103,7 +125,7 @@ module ExpediaRapid
       @headers['transaction-id']
     end
 
-    # General Headers
+    # General Headers Starts
     def vary
       @headers['vary']
     end

@@ -55,10 +55,35 @@ RSpec.describe ExpediaRapid::ApiResponseHeaders do
     it 'returns correct custom header values' do
       expect(headers.load).to eq '250'
       expect(headers.pagination_total_results).to eq '654423'
-      expect(headers.link).to include 'https://test.ean.com/v3/properties/content'
       expect(headers.transaction_id).to eq 'c0e27d48-64da-46fa-8647-06f200c7c36a'
       expect(headers.server).to eq 'EAN'
       expect(headers.region).to eq 'us-west-2'
+
+      expect(headers.link).to be_a ExpediaRapid::ApiResponseHeaders::Link
+      expect(headers.rate_limit).to be_a ExpediaRapid::ApiResponseHeaders::RateLimit
+    end
+
+    context 'when rate limit headers are missing' do
+      let(:headers_hash) { super().except('rate-limit-day', 'rate-limit-day-remaining', 'rate-limit-day-reset', 'rate-limit-minute-remaining', 'rate-limit-minute-reset', 'rate-limit-reduction-status') }
+      let(:headers) { described_class.new(Faraday::Utils::Headers.new(headers_hash)) }
+
+      it 'returns nil for rate limit values' do
+        expect(headers.rate_limit.day).to be_nil
+        expect(headers.rate_limit.day_remaining).to be_nil
+        expect(headers.rate_limit.day_reset).to be_nil
+        expect(headers.rate_limit.minute_remaining).to be_nil
+        expect(headers.rate_limit.minute_reset).to be_nil
+        expect(headers.rate_limit.reduction_status).to be_nil
+      end
+    end
+
+    context 'when link header is missing' do
+      let(:headers_hash) { super().except('link') }
+      let(:headers) { described_class.new(Faraday::Utils::Headers.new(headers_hash)) }
+
+      it 'returns nil for link values' do
+        expect(headers.link).to be_nil
+      end
     end
   end
 
@@ -69,6 +94,10 @@ RSpec.describe ExpediaRapid::ApiResponseHeaders do
       expect(link.url).to eq 'https://test.ean.com/v3/properties/content?token=Q11RF1Vda1AtSDVYFAwpdAlU='
       expect(link.rel).to eq 'next'
       expect(link.expires).to eq(Time.parse('2025-05-15T10:52:29.122562672Z'))
+    end
+
+    it 'extracts token from url correctly' do
+      expect(link.token).to eq 'Q11RF1Vda1AtSDVYFAwpdAlU='
     end
   end
 
