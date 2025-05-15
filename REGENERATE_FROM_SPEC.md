@@ -12,7 +12,7 @@ Note: The installation steps are for Ubuntu. For other OS, please refer to the r
    ```
 2. Install [yq](https://github.com/mikefarah/yq/#install)
    ```bash
-    ➜  ~ sudo add-apt-repository ppa:rmescandon/yq
+   ➜  ~ sudo add-apt-repository ppa:rmescandon/yq
    ➜  ~ sudo apt install yq
     ```
 3. Install [OpenAPI Flattener](https://github.com/equinor/openapi-flattener)

@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **time** | **String** | The time by which a guest must check out. | [optional] |
+| **instructions** | **String** | The property&#39;s check-out policy. | [optional] |
 
 ## Example
 
@@ -12,7 +13,8 @@
 require 'expedia_rapid'
 
 instance = ExpediaRapid::GetPropertyContent200ResponseValueCheckout.new(
-  time: null
+  time: null,
+  instructions: null
 )
 ```
 
